@@ -1,0 +1,61 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Mocha/Coffee palette */
+  --cream:        #F5EFE6;
+  --latte:        #EDE0D4;
+  --mocha-light:  #D5B99A;
+  --mocha:        #A07850;
+  --espresso:     #6B4C30;
+  --dark:         #3A2718;
+
+  --text-primary:   var(--dark);
+  --text-secondary: var(--espresso);
+  --text-muted:     var(--mocha);
+
+  --bg:      var(--cream);
+  --surface: var(--latte);
+  --border:  var(--mocha-light);
+
+  --accent:       var(--espresso);
+  --accent-hover: var(--mocha);
+
+  font-family: 'JetBrains Mono', 'Menlo', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text-primary);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--latte);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--mocha-light);
+  border-radius: 3px;
+}
