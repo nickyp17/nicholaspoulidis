@@ -26,7 +26,7 @@ export const email = "nicholas.poulidis@gmail.com";
 export const github = "https://github.com/nickyp17";
 export const linkedin = "https://linkedin.com/in/nickyp17";
 
-export const about = `CS co-op student at McMaster (graduating June 2026) with a focus on machine learning, NLP, and data engineering. I've built data pipelines and deployed algorithms in AWS at ODAIA Intelligence, and I'm steering toward roles in AI/ML and data science — applying models to real-world problems across classification, prediction, and semantic understanding.`;
+export const about = `Software engineer with hands-on experience in machine learning, NLP, and data engineering. I've built data pipelines and deployed algorithms in production at ODAIA Intelligence, and developed features at Geotab across the full stack. I focus on applying ML to real-world problems — from predictive modelling and text classification to semantic search.`;
 
 export const experience: Experience[] = [
   {
