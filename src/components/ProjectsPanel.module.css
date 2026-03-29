@@ -35,13 +35,12 @@
   padding: 18px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  transition: border-color 0.15s, box-shadow 0.15s;
+  border-radius: 2px;
+  transition: border-color 0.2s;
 }
 
 .card:hover {
   border-color: var(--mocha);
-  box-shadow: 0 2px 12px rgba(58, 39, 24, 0.08);
 }
 
 .cardTop {

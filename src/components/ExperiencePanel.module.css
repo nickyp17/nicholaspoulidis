@@ -35,8 +35,8 @@
   padding: 18px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  transition: border-color 0.15s;
+  border-radius: 2px;
+  transition: border-color 0.2s;
 }
 
 .entry:hover {

@@ -1,23 +1,45 @@
-.layout {
-  display: flex;
-  flex-direction: column;
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Centering shell — dot pattern from body shows outside the column */
+.root {
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.layout {
+  width: 100%;
+  max-width: 820px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 860px) {
+  .layout {
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  padding: 36px 44px 32px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
   background: var(--bg);
 }
 
-.hero {
-  padding: 36px 48px;
-  border-bottom: 1px solid var(--border);
-  flex-shrink: 0;
-}
-
 .heroInfo {
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  min-width: 0;
+  animation: fadeUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .identity {
@@ -30,7 +52,7 @@
 .avatar {
   width: 44px;
   height: 44px;
-  border-radius: 4px;
+  border-radius: 3px;
   background: var(--espresso);
   color: var(--cream);
   display: flex;
@@ -103,7 +125,7 @@
 .tab {
   background: none;
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 3px;
   padding: 5px 12px;
   font-family: inherit;
   font-size: 11px;
@@ -125,7 +147,31 @@
   background: var(--surface);
 }
 
+/* Theme toggle — top-right of hero */
+.themeToggle {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 0;
+  transition: color 0.15s;
+}
+
+.themeToggle:hover {
+  color: var(--text-secondary);
+}
+
+/* Content panel */
 .panel {
   flex: 1;
   overflow: hidden;
+  background: var(--bg);
 }
