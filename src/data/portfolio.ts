@@ -4,6 +4,7 @@ export interface Project {
   tags: string[];
   link?: string;
   repo?: string;
+  report?: string;
 }
 
 export interface Experience {
@@ -79,7 +80,7 @@ export const projects: Project[] = [
     description:
       "Predicted ATP match outcomes using feature-engineered FCNN, Random Forest, and ensemble models — achieving 66.79% test accuracy against a 50% baseline.",
     tags: ["PyTorch", "Scikit-learn", "Ensemble Models", "Python"],
-    repo: "https://github.com/nickyp17",
+    report: "/tennis-report.pdf",
   },
   {
     title: "Cyberbullying Detection",

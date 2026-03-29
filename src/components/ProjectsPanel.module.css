@@ -64,6 +64,11 @@
 .cardLink {
   font-size: 11px;
   color: var(--text-muted);
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
 }
 
 .cardLink:hover {
@@ -92,4 +97,58 @@
   color: var(--text-muted);
   border: 1px solid var(--border);
   letter-spacing: 0.3px;
+}
+
+/* PDF viewer */
+.viewer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.viewerHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 28px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 12px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.backBtn:hover {
+  color: var(--text-secondary);
+}
+
+.viewerTitle {
+  font-size: 12px;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.openBtn {
+  font-size: 11px;
+  color: var(--text-muted);
+  transition: color 0.15s;
+}
+
+.openBtn:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.pdfFrame {
+  flex: 1;
+  width: 100%;
+  border: none;
 }
