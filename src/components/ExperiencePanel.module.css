@@ -14,7 +14,7 @@
   letter-spacing: 0.5px;
   color: var(--text-secondary);
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
 }
 
 .prefix {
@@ -38,7 +38,7 @@
   gap: 12px;
   padding: 18px;
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   border-radius: 2px;
   transition: border-color 0.2s;
 }
