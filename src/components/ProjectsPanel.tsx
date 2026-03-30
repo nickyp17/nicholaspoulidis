@@ -1,6 +1,16 @@
 import { useState } from "react";
-import { projects } from "../data/portfolio";
+import { projects, type Project } from "../data/portfolio";
 import styles from "./ProjectsPanel.module.css";
+
+function handleCardClick(p: Project, setActiveReport: (r: { title: string; url: string }) => void) {
+  if (p.report) {
+    setActiveReport({ title: p.title, url: p.report });
+  } else if (p.repo) {
+    window.open(p.repo, "_blank", "noreferrer");
+  } else if (p.link) {
+    window.open(p.link, "_blank", "noreferrer");
+  }
+}
 
 export default function ProjectsPanel() {
   const [activeReport, setActiveReport] = useState<{ title: string; url: string } | null>(null);
@@ -38,29 +48,16 @@ export default function ProjectsPanel() {
       </h2>
       <div className={styles.grid}>
         {projects.map((p) => (
-          <article key={p.title} className={styles.card}>
+          <article
+            key={p.title}
+            className={`${styles.card} ${p.repo || p.link || p.report ? styles.clickable : ""}`}
+            onClick={() => handleCardClick(p, setActiveReport)}
+          >
             <div className={styles.cardTop}>
               <h3 className={styles.cardTitle}>{p.title}</h3>
-              <div className={styles.cardActions}>
-                {p.repo && (
-                  <a href={p.repo} target="_blank" rel="noreferrer" className={styles.cardLink}>
-                    repo ↗
-                  </a>
-                )}
-                {p.link && (
-                  <a href={p.link} target="_blank" rel="noreferrer" className={styles.cardLink}>
-                    live ↗
-                  </a>
-                )}
-                {p.report && (
-                  <button
-                    className={styles.cardLink}
-                    onClick={() => setActiveReport({ title: p.title, url: p.report! })}
-                  >
-                    report ↗
-                  </button>
-                )}
-              </div>
+              <span className={styles.cardHint}>
+                {p.report ? "report ↗" : p.repo ? "repo ↗" : p.link ? "live ↗" : ""}
+              </span>
             </div>
             <p className={styles.cardDesc}>{p.description}</p>
             <div className={styles.tags}>

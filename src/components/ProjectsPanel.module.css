@@ -43,6 +43,10 @@
   border-color: var(--mocha);
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 .cardTop {
   display: flex;
   align-items: baseline;
@@ -56,24 +60,10 @@
   color: var(--text-primary);
 }
 
-.cardActions {
-  display: flex;
-  gap: 10px;
-}
-
-.cardLink {
+.cardHint {
   font-size: 11px;
   color: var(--text-muted);
-  background: none;
-  border: none;
-  font-family: inherit;
-  cursor: pointer;
-  padding: 0;
-}
-
-.cardLink:hover {
-  color: var(--accent);
-  text-decoration: none;
+  flex-shrink: 0;
 }
 
 .cardDesc {

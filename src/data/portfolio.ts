@@ -12,6 +12,7 @@ export interface Experience {
   role: string;
   period: string;
   bullets: string[];
+  url?: string;
 }
 
 export interface Skill {
@@ -33,6 +34,7 @@ export const experience: Experience[] = [
     company: "ODAIA Intelligence Inc.",
     role: "Contract Data Engineer",
     period: "Nov 2025 — Mar 2026",
+    url: "https://odaia.ai",
     bullets: [
       "Built a synthetic data generation pipeline producing multi-year historical and forward-looking datasets with real-world statistical characteristics.",
       "Implemented configurable, recurring data generation to model incremental data loads and support robust testing workflows.",
@@ -42,6 +44,7 @@ export const experience: Experience[] = [
     company: "Geotab Inc.",
     role: "Software Developer Intern",
     period: "Sep 2024 — Apr 2025",
+    url: "https://www.geotab.com",
     bullets: [
       "Developed and debugged UI components in TypeScript, JavaScript, HTML, and CSS, delivering feature improvements to a fleet analytics platform.",
       "Improved automated test coverage with XUnit (C#) and Jest (TypeScript), increasing reliability of the test base.",
@@ -52,6 +55,7 @@ export const experience: Experience[] = [
     company: "ODAIA Intelligence Inc.",
     role: "Software Engineer Intern",
     period: "May 2023 — Aug 2023",
+    url: "https://odaia.ai",
     bullets: [
       "Developed and deployed data processing algorithms in AWS using Python and MySQL to fulfill customer data requests.",
       "Validated algorithm correctness with PyTest and optimized MySQL queries to reduce response times and improve pipeline performance.",
@@ -61,6 +65,7 @@ export const experience: Experience[] = [
     company: "ODAIA Intelligence Inc.",
     role: "Software Engineer Intern",
     period: "May 2022 — Aug 2022",
+    url: "https://odaia.ai",
     bullets: [
       "Built and deployed backend algorithms in AWS using Python and MySQL.",
       "Parallelized data processing algorithms using multi-threading and multiprocessing, significantly improving throughput.",

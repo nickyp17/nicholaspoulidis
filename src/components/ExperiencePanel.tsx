@@ -9,7 +9,11 @@ export default function ExperiencePanel() {
       </h2>
       <div className={styles.timeline}>
         {experience.map((e, i) => (
-          <article key={i} className={styles.entry}>
+          <article
+            key={i}
+            className={`${styles.entry} ${e.url ? styles.clickable : ""}`}
+            onClick={() => e.url && window.open(e.url, "_blank", "noreferrer")}
+          >
             <div className={styles.entryHeader}>
               <div>
                 <h3 className={styles.company}>{e.company}</h3>

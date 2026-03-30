@@ -28,6 +28,10 @@
   gap: 24px;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 .entry {
   display: flex;
   flex-direction: column;
