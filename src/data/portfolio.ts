@@ -27,7 +27,7 @@ export const email = "nicholas.poulidis@gmail.com";
 export const github = "https://github.com/nickyp17";
 export const linkedin = "https://linkedin.com/in/nickyp17";
 
-export const about = `Software engineer with hands-on experience in machine learning, NLP, and data engineering. I've built data pipelines and deployed algorithms in production at ODAIA Intelligence, and developed features at Geotab across the full stack. I focus on applying ML to real-world problems — from predictive modelling and text classification to semantic search.`;
+export const about = `Software engineer with hands-on experience in machine learning, NLP, and data engineering. I've built data pipelines and deployed algorithms in production at ODAIA Intelligence, and developed features at Geotab across the full stack. I focus on applying ML to real-world problems, from predictive modelling and text classification to semantic search.`;
 
 export const experience: Experience[] = [
   {
