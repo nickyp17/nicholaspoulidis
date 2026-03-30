@@ -10,12 +10,13 @@ type Theme = "light" | "dark";
 function getInitialTheme(): Theme {
   const stored = localStorage.getItem("theme");
   if (stored === "light" || stored === "dark") return stored;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return "light";
 }
 
 export default function App() {
   const [tab, setTab] = useState<Tab>("experience");
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  const [activeReport, setActiveReport] = useState<{ title: string; url: string } | null>(null);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -36,7 +37,7 @@ export default function App() {
               <nav className={styles.tabs}>
                 <button
                   className={`${styles.tab} ${tab === "experience" ? styles.active : ""}`}
-                  onClick={() => setTab("experience")}
+                  onClick={() => { setTab("experience"); setActiveReport(null); }}
                 >
                   experience
                 </button>
@@ -48,18 +49,22 @@ export default function App() {
                 </button>
               </nav>
             </div>
-            <p className={styles.about}>{about}</p>
-            <div className={styles.links}>
-              <a href={`mailto:${email}`} className={styles.link}>
-                <span className={styles.linkIcon}>✉</span>{email}
-              </a>
-              <a href={github} target="_blank" rel="noreferrer" className={styles.link}>
-                <span className={styles.linkIcon}>⌥</span>github
-              </a>
-              <a href={linkedin} target="_blank" rel="noreferrer" className={styles.link}>
-                <span className={styles.linkIcon}>◈</span>linkedin
-              </a>
-            </div>
+            {!activeReport && (
+              <>
+                <p className={styles.about}>{about}</p>
+                <div className={styles.links}>
+                  <a href={`mailto:${email}`} className={styles.link}>
+                    <span className={styles.linkIcon}>✉</span>{email}
+                  </a>
+                  <a href={github} target="_blank" rel="noreferrer" className={styles.link}>
+                    <span className={styles.linkIcon}>⌥</span>github
+                  </a>
+                  <a href={linkedin} target="_blank" rel="noreferrer" className={styles.link}>
+                    <span className={styles.linkIcon}>◈</span>linkedin
+                  </a>
+                </div>
+              </>
+            )}
           </div>
           <button
             className={styles.themeToggle}
@@ -70,7 +75,10 @@ export default function App() {
           </button>
         </header>
         <main className={styles.panel}>
-          {tab === "projects" ? <ProjectsPanel /> : <ExperiencePanel />}
+          {tab === "projects"
+            ? <ProjectsPanel activeReport={activeReport} setActiveReport={setActiveReport} />
+            : <ExperiencePanel />
+          }
         </main>
       </div>
     </div>

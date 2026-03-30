@@ -1,6 +1,10 @@
-import { useState } from "react";
 import { projects, type Project } from "../data/portfolio";
 import styles from "./ProjectsPanel.module.css";
+
+interface Props {
+  activeReport: { title: string; url: string } | null;
+  setActiveReport: (r: { title: string; url: string } | null) => void;
+}
 
 function handleCardClick(p: Project, setActiveReport: (r: { title: string; url: string }) => void) {
   if (p.report) {
@@ -12,8 +16,7 @@ function handleCardClick(p: Project, setActiveReport: (r: { title: string; url: 
   }
 }
 
-export default function ProjectsPanel() {
-  const [activeReport, setActiveReport] = useState<{ title: string; url: string } | null>(null);
+export default function ProjectsPanel({ activeReport, setActiveReport }: Props) {
 
   if (activeReport) {
     return (
@@ -23,20 +26,29 @@ export default function ProjectsPanel() {
             ← back
           </button>
           <span className={styles.viewerTitle}>{activeReport.title} — report</span>
-          <a
-            href={activeReport.url}
-            target="_blank"
-            rel="noreferrer"
-            className={styles.openBtn}
-          >
+          <a href={activeReport.url} target="_blank" rel="noreferrer" className={styles.openBtn}>
             open ↗
           </a>
         </div>
+        {/* Desktop: inline iframe */}
         <iframe
           src={activeReport.url}
           className={styles.pdfFrame}
           title={`${activeReport.title} report`}
         />
+        {/* Mobile: hand off to native PDF viewer */}
+        <div className={styles.pdfFallback}>
+          <p className={styles.fallbackTitle}>{activeReport.title}</p>
+          <p className={styles.fallbackHint}>PDFs are best viewed in your device's native viewer.</p>
+          <a
+            href={activeReport.url}
+            target="_blank"
+            rel="noreferrer"
+            className={styles.fallbackBtn}
+          >
+            open report ↗
+          </a>
+        </div>
       </div>
     );
   }
