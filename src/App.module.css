@@ -169,6 +169,41 @@
   color: var(--text-secondary);
 }
 
+/* Mobile hero — tighten everything, drop the about paragraph */
+@media (max-width: 767px) {
+  .hero {
+    padding: 16px 20px 14px;
+  }
+
+  .heroInfo {
+    gap: 10px;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+
+  .about {
+    display: none;
+  }
+
+  .links {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .tabs {
+    margin-left: 6px;
+  }
+
+  .themeToggle {
+    top: 14px;
+    right: 16px;
+  }
+}
+
 /* Content panel */
 .panel {
   flex: 1;
