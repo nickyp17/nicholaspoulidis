@@ -93,6 +93,7 @@ export const projects: Project[] = [
       "Binary NLP classifier detecting cyberbullying in tweets. Applied Bag-of-Words feature extraction via CountVectorizer and logistic regression on a balanced 11K-sample dataset.",
     tags: ["NLP", "Scikit-learn", "Text Classification", "Python"],
     repo: "https://github.com/nickyp17/4NL3Group21",
+    report: "/cyberbullying-report.pdf",
   },
   {
     title: "Consensus",
