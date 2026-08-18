@@ -31,6 +31,17 @@ export const about = `Software engineer with hands-on experience in machine lear
 
 export const experience: Experience[] = [
   {
+    company: "Alexion Pharmaceuticals, Inc.",
+    role: "Data & AI Solutions Associate",
+    period: "Aug 2026 — Present",
+    url: "https://alexion.com",
+    bullets: [
+      "Configuring Copilot Studio agents and supporting generative AI prototypes for the Canadian Alexion affiliate, from prompt design to acceptance testing.",
+      "Supporting data profiling, SQL validation, and dbt/Airflow updates, plus Power BI and Power Automate development for business reporting workflows.",
+      "Coordinating project delivery within an Agile/Hybrid framework, maintaining status communications and documentation across cross-functional teams.",
+    ],
+  },
+  {
     company: "ODAIA Intelligence Inc.",
     role: "Contract Data Engineer",
     period: "Nov 2025 — Mar 2026",
